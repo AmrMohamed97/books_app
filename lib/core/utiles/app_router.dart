@@ -20,12 +20,12 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: bookDetail,
-        builder: (context,state)=> const BookDetailView(),
-        ),
-        GoRoute(
+        builder: (context, state) => const BookDetailView(),
+      ),
+      GoRoute(
         path: searchView,
-        builder: (context,state)=> const SearchView(),
-        ),
+        builder: (context, state) => const SearchView(),
+      ),
     ],
   );
 }

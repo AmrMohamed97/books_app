@@ -1,7 +1,7 @@
- import 'package:books_app/features/home/presentation/views/widgets/book_detail_section.dart';
+import 'package:books_app/features/home/presentation/views/widgets/book_detail_section.dart';
 import 'package:books_app/features/home/presentation/views/widgets/custom_book_detail_app_Bar.dart';
- import 'package:books_app/features/home/presentation/views/widgets/simillar_book_section.dart';
- import 'package:flutter/material.dart';
+import 'package:books_app/features/home/presentation/views/widgets/simillar_book_section.dart';
+import 'package:flutter/material.dart';
 
 class BookDetailViewBody extends StatelessWidget {
   const BookDetailViewBody({super.key});
@@ -13,22 +13,22 @@ class BookDetailViewBody extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding:   EdgeInsets.symmetric(horizontal: 35.0),
+            padding: EdgeInsets.symmetric(horizontal: 35.0),
             child: Column(
               children: [
-                  SafeArea(
+                SafeArea(
                   child: SizedBox(
                     height: 10,
                   ),
                 ),
-                  CustomBookDetailAppBar(),
-                  BookDetailSection(),
-                  Expanded(
+                CustomBookDetailAppBar(),
+                BookDetailSection(),
+                Expanded(
                   child: SizedBox(
                     height: 47,
                   ),
                 ),
-                  SimillarBookSection(),
+                SimillarBookSection(),
               ],
             ),
           ),

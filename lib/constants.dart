@@ -8,5 +8,7 @@ const Color kyellow = Color(0xffFFDD4F);
 const Duration kTransitionDuration = Duration(seconds: 2);
 
 //--fonts
-const String kGTSectraFine= 'GT Sectra Fine Regular';
-const Color kdeepgray= Color(0xff707070);
+const String kGTSectraFine = 'GT Sectra Fine Regular';
+const String kfeaturedBooks = 'featuredBooks';
+const String knewestBooks = 'newestBooks';
+const Color kdeepgray = Color(0xff707070);

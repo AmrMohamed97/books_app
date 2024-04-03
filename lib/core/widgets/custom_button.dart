@@ -13,7 +13,7 @@ class CustomButton extends StatelessWidget {
       required this.borderRadius,
       required this.title});
   final Color foregroundColor, backgroundColor;
-  final double? verticalPadding, horizontalPadding,fontSize;
+  final double? verticalPadding, horizontalPadding, fontSize;
   final BorderRadius? borderRadius;
   final String title;
   final void Function()? onPressed;
@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
         title,
         style: Styles.textStyle18.copyWith(
           fontWeight: FontWeight.w900,
-          fontSize:fontSize, 
+          fontSize: fontSize,
         ),
       ),
     );
