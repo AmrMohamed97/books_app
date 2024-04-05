@@ -1,4 +1,4 @@
-import 'package:books_app/features/home/presentation/views/widgets/custom_similar_book_image.dart';
+ import 'package:books_app/features/home/presentation/views/widgets/custom_similar_book_image.dart';
 import 'package:flutter/material.dart';
 
 class SimillarBooksListView extends StatelessWidget {
@@ -12,7 +12,7 @@ class SimillarBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => const Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.0),
-          child: CustomSimilarBookImage(),
+          child: CustomSimilarBookImage(image: null,),
         ),
       ),
     );

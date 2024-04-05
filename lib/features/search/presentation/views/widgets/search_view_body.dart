@@ -1,7 +1,6 @@
 import 'package:books_app/core/utiles/text_styles.dart';
 import 'package:books_app/core/widgets/custom_text_field.dart';
-import 'package:books_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -32,7 +31,7 @@ class SearchViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const BestSellerListView(),
+        // const BestSellerListView(),
       ],
     );
   }

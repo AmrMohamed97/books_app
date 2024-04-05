@@ -43,7 +43,7 @@ class BooksApp extends StatelessWidget {
             FetchNewestBooksUseCase(
               homeRepo: gitIt.get<HomeRepoImpl>(),
             ),
-          );
+          )..getNewestBooks();
         }),
       ],
       child: MaterialApp.router(
