@@ -1,7 +1,7 @@
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 
 import 'access_info.dart';
-import 'sale_info.dart';
+// import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
@@ -11,7 +11,7 @@ class BookModel extends BookEntity {
   String? etag;
   String? selfLink;
   VolumeInfo? volumeInfo;
-  SaleInfo? saleInfo;
+  // SaleInfo? saleInfo;
   AccessInfo? accessInfo;
   SearchInfo? searchInfo;
 
@@ -21,19 +21,20 @@ class BookModel extends BookEntity {
     this.etag,
     this.selfLink,
     this.volumeInfo,
-    this.saleInfo,
+    // this.saleInfo,
     this.accessInfo,
     this.searchInfo,
   }) : super(
-            bookId: id!,
-            imageUrl: volumeInfo?.imageLinks?.thumbnail ?? '',
-            title: volumeInfo!.title!,
-            author: volumeInfo?.authors?.first??'private',
-            price: 0.0);
+          bookId: id!,
+          imageUrl: volumeInfo?.imageLinks?.thumbnail ?? '',
+          title: volumeInfo!.title!,
+          author: volumeInfo.authors?.first ?? 'private',
+          // price: 0.0,
+        );
 
   @override
   String toString() {
-    return 'BookModel(kind: $kind, id: $id, etag: $etag, selfLink: $selfLink, volumeInfo: $volumeInfo, saleInfo: $saleInfo, accessInfo: $accessInfo, searchInfo: $searchInfo)';
+    return 'BookModel(kind: $kind, id: $id, etag: $etag, selfLink: $selfLink, volumeInfo: $volumeInfo, saleInfo: $volumeInfo, accessInfo: $accessInfo, searchInfo: $searchInfo)';
   }
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
@@ -44,9 +45,9 @@ class BookModel extends BookEntity {
         volumeInfo: json['volumeInfo'] == null
             ? null
             : VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
-        saleInfo: json['saleInfo'] == null
-            ? null
-            : SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
+        // saleInfo: json['saleInfo'] == null
+        // ? null
+        // : SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
         accessInfo: json['accessInfo'] == null
             ? null
             : AccessInfo.fromJson(json['accessInfo'] as Map<String, dynamic>),
@@ -61,7 +62,7 @@ class BookModel extends BookEntity {
         'etag': etag,
         'selfLink': selfLink,
         'volumeInfo': volumeInfo?.toJson(),
-        'saleInfo': saleInfo?.toJson(),
+        // 'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
       };
