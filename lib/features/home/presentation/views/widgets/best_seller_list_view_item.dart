@@ -1,6 +1,5 @@
 import 'package:books_app/constants.dart';
-import 'package:books_app/core/utiles/assets_data.dart';
-import 'package:books_app/core/utiles/text_styles.dart';
+ import 'package:books_app/core/utiles/text_styles.dart';
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:cached_network_image/cached_network_image.dart';

@@ -5,12 +5,21 @@ import 'package:books_app/features/home/presentation/manager/featured_books_cubi
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
   FeaturedBooksCubit(this.featchFeaturedBookUseCase) : super(FeaturedBooksInitial());
   FeatchFeaturedBookUseCase featchFeaturedBookUseCase;
-  Future<void> getFeaturedBooks() async {
-    emit(FeaturedBooksLoading());
-    var result = await featchFeaturedBookUseCase.call();
+  
+  Future<void> getFeaturedBooks({int startIndex = 0}) async {
+    if (startIndex==0) {
+  emit(FeaturedBooksLoading());
+}else{
+  emit(FeaturedBooksPaginationLoading());
+}
+    var result = await featchFeaturedBookUseCase.call(startIndex);
     result.fold(
       (failure) {
-        emit(FeaturedBooksError(failure.message));
+        if (startIndex==0) {
+  emit(FeaturedBooksError(failure.message));
+}else{
+  emit(FeaturedBooksPaginationError(failure.message));
+}
       }, 
       (books) {
         emit(FeaturedBooksSuccess(books));

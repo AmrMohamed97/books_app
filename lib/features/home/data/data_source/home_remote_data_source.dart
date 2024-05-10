@@ -3,11 +3,10 @@ import 'package:books_app/core/utiles/api_services.dart';
 import 'package:books_app/core/utiles/functions/add_books_to_box.dart';
 import 'package:books_app/features/home/data/models/book_model/book_model.dart';
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
-import 'package:hive_flutter/adapters.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchNewestBooks();
-  Future<List<BookEntity>> fetchFeaturedBooks();
+  Future<List<BookEntity>> fetchNewestBooks({int startIndex = 0});
+  Future<List<BookEntity>> fetchFeaturedBooks({int startIndex = 0});
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -16,19 +15,20 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   HomeRemoteDataSourceImpl({required this.apiServices});
 
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() async {
+  Future<List<BookEntity>> fetchFeaturedBooks({int startIndex = 0}) async {
     Map<String, dynamic> data = await apiServices.get(
-        endPonit: 'volumes?Filtering=free-ebooks&q=programing');
+        endPonit:
+            'volumes?Filtering=free-ebooks&sorting=featured&startIndex${startIndex * 10}&q=programming');
     List<BookEntity> books = getBooksList(data);
     addBooksToBox(books, kfeaturedBooks);
     return books;
   }
 
   @override
-  Future<List<BookEntity>> fetchNewestBooks() async {
+  Future<List<BookEntity>> fetchNewestBooks({int startIndex = 0}) async {
     Map<String, dynamic> data = await apiServices.get(
         endPonit:
-            'volumes?pXDzdJ_1E3oC=newest&q=war');
+            'volumes?Filtering=free-ebooks&sorting=newest&startIndex${startIndex * 10}&q=computer science');
     List<BookEntity> books = getBooksList(data);
     addBooksToBox(books, knewestBooks);
     return books;
