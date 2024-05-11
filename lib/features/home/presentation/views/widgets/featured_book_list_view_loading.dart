@@ -7,8 +7,7 @@ class FeaturedBookListViewLooding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => const CustomImageLoading()
-    );
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => const CustomImageLoading());
   }
 }

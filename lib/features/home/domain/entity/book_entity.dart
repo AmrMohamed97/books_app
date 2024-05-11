@@ -12,14 +12,17 @@ class BookEntity extends HiveObject {
   final String title;
   @HiveField(3)
   final String? author;
-  // @HiveField(4)
-  // final num? price;
+  @HiveField(4)
+  final num? rate;
+  @HiveField(5)
+  final num? ratingCount;
 
-  BookEntity({
+  BookEntity( {
     required this.bookId,
     required this.imageUrl,
     required this.title,
     required this.author,
-    // required this.price,
+    this.rate,
+    this.ratingCount,
   });
 }

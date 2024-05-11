@@ -1,23 +1,23 @@
-class IndustryIdentifier {
-  String? type;
-  String? identifier;
+import 'package:equatable/equatable.dart';
 
-  IndustryIdentifier({this.type, this.identifier});
+class IndustryIdentifier extends Equatable {
+  final String? type;
+  final String? identifier;
 
-  @override
-  String toString() {
-    return 'IndustryIdentifier(type: $type, identifier: $identifier)';
-  }
+  const IndustryIdentifier({this.type, this.identifier});
 
-  factory IndustryIdentifier.fromJson(Map<String, dynamic> json) {
+  factory IndustryIdentifier.fromJsom(Map<String, dynamic> json) {
     return IndustryIdentifier(
       type: json['type'] as String?,
       identifier: json['identifier'] as String?,
     );
   }
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJsom() => {
         'type': type,
         'identifier': identifier,
       };
+
+  @override
+  List<Object?> get props => [type, identifier];
 }

@@ -21,18 +21,19 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
     _scrollController.addListener(scrollListener);
     super.initState();
   }
+
   Future<void> scrollListener() async {
-      if (_scrollController.hasClients &&
-          _scrollController.position.pixels >=
-              _scrollController.position.maxScrollExtent * 0.7) {
-        if (isLoading == false) {
-          isLoading = true;
-          await  BlocProvider.of<FeaturedBooksCubit>(context)
-              .getFeaturedBooks(startIndex: nextPage++);
-          isLoading = false;
-        }
+    if (_scrollController.hasClients &&
+        _scrollController.position.pixels >=
+            _scrollController.position.maxScrollExtent * 0.7) {
+      if (isLoading == false) {
+        isLoading = true;
+        await BlocProvider.of<FeaturedBooksCubit>(context)
+            .getFeaturedBooks(startIndex: nextPage++);
+        isLoading = false;
       }
     }
+  }
 
   @override
   Widget build(BuildContext context) {

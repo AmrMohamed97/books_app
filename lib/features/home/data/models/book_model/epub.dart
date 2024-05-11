@@ -1,16 +1,18 @@
-class Epub {
-  bool? isAvailable;
+import 'package:equatable/equatable.dart';
 
-  Epub({this.isAvailable});
+class Epub extends Equatable {
+  final bool? isAvailable;
 
-  @override
-  String toString() => 'Epub(isAvailable: $isAvailable)';
+  const Epub({this.isAvailable});
 
-  factory Epub.fromJson(Map<String, dynamic> json) => Epub(
+  factory Epub.fromJsom(Map<String, dynamic> json) => Epub(
         isAvailable: json['isAvailable'] as bool?,
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJsom() => {
         'isAvailable': isAvailable,
       };
+
+  @override
+  List<Object?> get props => [isAvailable];
 }

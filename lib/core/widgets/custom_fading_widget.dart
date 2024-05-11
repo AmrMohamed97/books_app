@@ -40,5 +40,4 @@ class _CustomFadingWidgetState extends State<CustomFadingWidget>
       child: widget.child,
     );
   }
-   
 }

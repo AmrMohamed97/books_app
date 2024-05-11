@@ -1,12 +1,12 @@
 import 'package:books_app/constants.dart';
- import 'package:books_app/core/utiles/text_styles.dart';
+import 'package:books_app/core/utiles/text_styles.dart';
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.book});
+class NewestBookListViewItem extends StatelessWidget {
+  const NewestBookListViewItem({super.key, required this.book});
   final BookEntity book;
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class BestSellerListViewItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: CachedNetworkImage(
-                imageUrl: book.imageUrl ??
-                    'http://books.google.com/books/content?id=gL34DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api',
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+                imageUrl: book.imageUrl! ,
                 fit: BoxFit.fill,
               ),
             ),
@@ -48,7 +48,7 @@ class BestSellerListViewItem extends StatelessWidget {
                           height: 3,
                         ),
                         Text(
-                          book.author ?? 'unknown',
+                          book.author ?? 'private',
                           style: Styles.textStyle14,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -60,11 +60,11 @@ class BestSellerListViewItem extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '0.0 €',
+                                'free',
                                 style: Styles.textStyle20
                                     .copyWith(fontWeight: FontWeight.bold),
                               ),
-                              const Bookrating(),
+                              Bookrating(bookRating:book),
                             ])
                       ]),
                 ),

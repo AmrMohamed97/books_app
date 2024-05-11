@@ -1,6 +1,6 @@
 import 'package:books_app/core/utiles/text_styles.dart';
 import 'package:books_app/core/widgets/custom_text_field.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});

@@ -1,21 +1,21 @@
-class ImageLinks {
-  String? smallThumbnail;
-  String? thumbnail;
+import 'package:equatable/equatable.dart';
 
-  ImageLinks({this.smallThumbnail, this.thumbnail});
+class ImageLinks extends Equatable {
+  final String? smallThumbnail;
+  final String? thumbnail;
 
-  @override
-  String toString() {
-    return 'ImageLinks(smallThumbnail: $smallThumbnail, thumbnail: $thumbnail)';
-  }
+  const ImageLinks({this.smallThumbnail, this.thumbnail});
 
-  factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
+  factory ImageLinks.fromJsom(Map<String, dynamic> json) => ImageLinks(
         smallThumbnail: json['smallThumbnail'] as String?,
         thumbnail: json['thumbnail'] as String?,
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJsom() => {
         'smallThumbnail': smallThumbnail,
         'thumbnail': thumbnail,
       };
+
+  @override
+  List<Object?> get props => [smallThumbnail, thumbnail];
 }

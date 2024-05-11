@@ -1,24 +1,24 @@
- import 'package:books_app/core/widgets/custom_fading_widget.dart';
+import 'package:books_app/core/widgets/custom_fading_widget.dart';
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:books_app/features/home/presentation/manager/newest_book_cubit/newest_book_cubit.dart';
 import 'package:books_app/features/home/presentation/manager/newest_book_cubit/newest_book_state.dart';
-import 'package:books_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:books_app/features/home/presentation/views/widgets/newest_book_list_view.dart';
 import 'package:books_app/features/home/presentation/views/widgets/best_seller_list_view_loading.dart';
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BestSellerListViewBlocConsumer extends StatefulWidget {
-  const BestSellerListViewBlocConsumer({
+class NewestBookListViewBlocConsumer extends StatefulWidget {
+  const NewestBookListViewBlocConsumer({
     super.key,
   });
 
   @override
-  State<BestSellerListViewBlocConsumer> createState() =>
-      _BestSellerListViewBlocConsumerState();
+  State<NewestBookListViewBlocConsumer> createState() =>
+      _NewestBookListViewBlocConsumerState();
 }
 
-class _BestSellerListViewBlocConsumerState
-    extends State<BestSellerListViewBlocConsumer> {
+class _NewestBookListViewBlocConsumerState
+    extends State<NewestBookListViewBlocConsumer> {
   final List<BookEntity> newBooks = [];
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,7 @@ class _BestSellerListViewBlocConsumerState
         if (state is NewestBookSuccess ||
             state is NewestBookPaginationLoading ||
             state is NewestBookPaginationError) {
-              
-          return BestSellerListView(
+          return NewestBookListView(
             books: newBooks,
           );
         } else if (state is NewestBookError) {

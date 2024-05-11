@@ -1,6 +1,6 @@
 import 'package:books_app/core/utiles/text_styles.dart';
 import 'package:books_app/features/home/presentation/manager/newest_book_cubit/newest_book_cubit.dart';
-import 'package:books_app/features/home/presentation/views/widgets/best_seller_list_view_bloc_consumer.dart';
+import 'package:books_app/features/home/presentation/views/widgets/newest_book_list_view_bloc_consumer.dart';
 import 'package:books_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:books_app/features/home/presentation/views/widgets/featured_books_list_view_bloc_consumer.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +71,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ],
           ),
         ),
-        const BestSellerListViewBlocConsumer(),
+        const NewestBookListViewBlocConsumer(),
       ],
     );
   }

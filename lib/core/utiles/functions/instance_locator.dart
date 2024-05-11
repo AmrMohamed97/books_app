@@ -8,9 +8,11 @@ import 'package:get_it/get_it.dart';
 final gitIt = GetIt.instance;
 void instanceLocator() {
   gitIt.registerSingleton<ApiServices>(ApiServices(Dio()));
-  gitIt.registerSingleton<HomeRepoImpl>( HomeRepoImpl(
-                homeLocalDataSource: HomeLocalDatasourceImpl(),
-                homeRemoteDataSource:
-                    HomeRemoteDataSourceImpl(apiServices:gitIt.get<ApiServices>() ),
-              ),);
+  gitIt.registerSingleton<HomeRepoImpl>(
+    HomeRepoImpl(
+      homeLocalDataSource: HomeLocalDatasourceImpl(),
+      homeRemoteDataSource:
+          HomeRemoteDataSourceImpl(apiServices: gitIt.get<ApiServices>()),
+    ),
+  );
 }

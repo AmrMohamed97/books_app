@@ -1,5 +1,5 @@
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
- import 'package:books_app/features/home/presentation/views/home_view.dart';
+import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_detail_view_body.dart';
 import 'package:books_app/features/search/presentation/views/search_view.dart';
 import 'package:books_app/features/splash_screen/presentation/views/splash_view.dart';
@@ -23,8 +23,9 @@ abstract class AppRoutes {
         path: bookDetail,
         builder: (context, state) {
           BookEntity book = state.extra! as BookEntity;
-          return BookDetailViewBody(book: book,);
-        
+          return BookDetailViewBody(
+            book: book,
+          );
         },
       ),
       GoRoute(

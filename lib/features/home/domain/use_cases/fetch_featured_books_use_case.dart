@@ -10,6 +10,6 @@ class FeatchFeaturedBookUseCase extends UseCase<List<BookEntity>, int> {
 
   @override
   Future<Either<Failure, List<BookEntity>>> call([int? params]) {
-    return homeRepo.fetchFeaturedBooks(startIndex: params??0 );
+    return homeRepo.fetchFeaturedBooks(startIndex: params ?? 0);
   }
 }
