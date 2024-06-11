@@ -1,6 +1,6 @@
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_detail_section.dart';
-import 'package:books_app/features/home/presentation/views/widgets/custom_book_detail_app_Bar.dart';
+import 'package:books_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:books_app/features/home/presentation/views/widgets/simillar_book_section.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class BookDetailViewBody extends StatelessWidget {
                     height: 10,
                   ),
                 ),
-                const CustomBookDetailAppBar(),
+                const CustomBookDetailsAppBar(),
                 BookDetailSection(
                   book: book,
                 ),

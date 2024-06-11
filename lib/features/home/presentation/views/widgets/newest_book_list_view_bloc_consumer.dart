@@ -1,5 +1,4 @@
-import 'package:books_app/core/widgets/custom_fading_widget.dart';
-import 'package:books_app/features/home/domain/entity/book_entity.dart';
+ import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:books_app/features/home/presentation/manager/newest_book_cubit/newest_book_cubit.dart';
 import 'package:books_app/features/home/presentation/manager/newest_book_cubit/newest_book_state.dart';
 import 'package:books_app/features/home/presentation/views/widgets/newest_book_list_view.dart';

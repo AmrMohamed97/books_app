@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:books_app/constants.dart';
 import 'package:books_app/features/home/domain/entity/book_entity.dart';
 import 'package:hive_flutter/adapters.dart';
